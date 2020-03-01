@@ -6,6 +6,9 @@
     (global $WHITE i32 (i32.const 2))
     (global $CROWN i32 (i32.const 4))
 
+    ;; player turns
+    (global $CURRENT_TURN (mut i32) (i32.const 0))
+
     ;; Index for given position (x, y) = (x + y * 8)
     (func $indexForPosition (param $x i32) (param $y i32) (result i32)
         (i32.add
@@ -106,6 +109,32 @@
             (i32.ge_s (get_local $value) (get_local $low))
             (i32.le_s (get_local $value) (get_local $high))
         )
+    )
+
+    ;; Gets the current turn
+    (func $getTurnOwner (result i32)
+        (get_global $CURRENT_TURN)
+    )
+
+    ;; Set current turn
+    (func $setTurnOwner (param $piece i32)
+        (set_global $CURRENT_TURN (get_local $piece))
+    )
+
+    ;; Toggles the turn owner
+    (func $toggleTurnOwner
+        (if (i32.eq (call $getTurnOwner) (i32.const 1))
+            (then (call $setTurnOwner (i32.const 2)))
+            (else (call $setTurnOwner (i32.const 1)))            
+        )
+    )
+
+    ;; Checks if the current turn belongs to the human player
+    (func $isPlayerTurn (param $player i32) (result i32)
+        (i32.ge_s
+            (i32.and (get_local $player) (call $getTurnOwner))
+            (i32.const 0)
+        )   
     )
 
     (export "indexForPosition" (func $indexForPosition))
