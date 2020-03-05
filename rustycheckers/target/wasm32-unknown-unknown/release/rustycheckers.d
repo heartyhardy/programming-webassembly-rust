@@ -1,0 +1,1 @@
+/home/madu/Documents/Rust/rust-webassembly-book/rustycheckers/target/wasm32-unknown-unknown/release/rustycheckers.wasm: /home/madu/Documents/Rust/rust-webassembly-book/rustycheckers/src/board.rs /home/madu/Documents/Rust/rust-webassembly-book/rustycheckers/src/game.rs /home/madu/Documents/Rust/rust-webassembly-book/rustycheckers/src/lib.rs
