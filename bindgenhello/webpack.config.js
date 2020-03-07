@@ -4,15 +4,15 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: './index.js',
-    output:{
+    output: {
         path:path.resolve(__dirname,'dist'),
         filename:'index.js'
     },
     plugins: [
         new htmlWebpackPlugin(),
         new webpack.ProvidePlugin({
-            TextDecoder:['text-encoding','TextDecoder'],
-            TextEncoder:['text-encoding','TextEncoder']
+            TextDecoder: ['text-encoding', 'TextDecoder'],
+            TextEncoder: ['text-encoding', 'TextEncoder']
         })
     ],
     mode:'development'

@@ -263,7 +263,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const wasm = Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./bindgenhello */ \"./bindgenhello.js\"));\n\nwasm\n    .then(h=> h.hello(\"World WASM!\"))\n    .catch(console.error);\n\n//# sourceURL=webpack:///./index.js?");
+eval("const wasm = Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./bindgenhello */ \"./bindgenhello.js\"));\n\nwasm\n    .then(h => h.hello(\"WASM!\"))\n    .catch(console.error);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
